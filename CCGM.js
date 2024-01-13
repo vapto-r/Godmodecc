@@ -22,7 +22,6 @@ function automateCookieClicker() {
             // Calculate and set the random click position
             Game.mouseX = cookieCenterX + radius * Math.cos(angle);
             Game.mouseY = cookieCenterY + radius * Math.sin(angle);
-    
             // Click the cookie
             Game.ClickCookie();
         }
@@ -44,7 +43,6 @@ function automateCookieClicker() {
             clearInterval(buildingPurchaseInterval);
         }
     }, 1);
-
    var unwantedUpgrades = [74, 84, 182, 183, 184, 185, 209, 332, 563, 361, 806, 333, 414];
 	 var upgradePurchaseInterval = setInterval(function() {
 		    if (!Game.OnAscend) {
@@ -57,7 +55,6 @@ function automateCookieClicker() {
 		        }
 		    }
 		}, 1); // Run this every second
-
     // Check for Golden Cookies and click them
     goldenCookieInterval = setInterval(function() {
         if (!Game.OnAscend) {
@@ -88,8 +85,6 @@ function automateCookieClicker() {
                 }
         }
     }, 24 * 60 * 60 * 1000); // Checks for ascension every 24 hours
-
-
 // Chooses our ascend upgrades
  ascendUpgradeInterval = setInterval(function() {
         // Check if we are on the ascension screen
@@ -116,7 +111,6 @@ function automateCookieClicker() {
                              clearInterval(ascendUpgradeInterval); // Stop trying to buy upgrades once reincarnated
                         }
                     }, 1000); // Adjust this timeout as needed for the confirmation prompt to become interactive
-                   
                 }
             }
         }
@@ -132,7 +126,6 @@ function automateCookieClicker() {
 		    }
 		}, 1);
 }
-
 function stopAutomation() {
     clearInterval(cookieClickerInterval);
     clearInterval(buildingPurchaseInterval);
@@ -142,9 +135,5 @@ function stopAutomation() {
     clearInterval(ascendUpgradeInterval);
 		clearInterval(wrinklerInterval);
 }
-
-// Start the automation
 automateCookieClicker();
 
-// Use this function to stop the automation
-// stopAutomation();
